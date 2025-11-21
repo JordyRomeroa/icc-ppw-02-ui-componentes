@@ -1,21 +1,19 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Component, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 interface Heuristica {
   id: number;
   titulo: string;
   icono: string;
   descripcion: string;
+  ruta: string;
 }
 
 @Component({
   selector: 'app-interfaz-page',
-  standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [RouterLink],
   templateUrl: './interfaz-page.html',
-  styleUrls: ['./interfaz-page.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  styleUrl: './interfaz-page.css',
 })
 export class InterfazPage {
 
@@ -24,62 +22,71 @@ export class InterfazPage {
       id: 1,
       titulo: 'Visibilidad del Estado del Sistema',
       icono: '👁️',
-      descripcion: 'El sistema mantiene informado al usuario sobre lo que está pasando en tiempo real.'
+      descripcion: 'El sistema debe mantener informados a los usuarios sobre lo que está ocurriendo.',
+      ruta: '/heuristica/1'
     },
     {
       id: 2,
       titulo: 'Correspondencia con el Mundo Real',
       icono: '🌍',
-      descripcion: 'La interfaz utiliza palabras, íconos y conceptos que el usuario ya conoce.'
+      descripcion: 'El sistema debe hablar el idioma del usuario con conceptos familiares.',
+      ruta: '/heuristica/2'
     },
     {
       id: 3,
       titulo: 'Control y Libertad del Usuario',
       icono: '🎮',
-      descripcion: 'Debe existir una forma clara de deshacer, rehacer o cancelar acciones.'
+      descripcion: 'Los usuarios necesitan controlar el sistema y tener salidas de emergencia.',
+      ruta: '/heuristica/3'
     },
     {
       id: 4,
       titulo: 'Consistencia y Estándares',
       icono: '📏',
-      descripcion: 'Todo el sistema debe ser consistente y seguir convenciones de diseño.'
+      descripcion: 'Los usuarios no deben preguntarse si acciones diferentes significan lo mismo.',
+      ruta: '/heuristica/4'
     },
     {
       id: 5,
       titulo: 'Prevención de Errores',
       icono: '🚫',
-      descripcion: 'La UI ayuda a prevenir errores antes de que ocurran.'
+      descripcion: 'Mejor prevenir errores que mostrar buenos mensajes de error.',
+      ruta: '/heuristica/5'
     },
     {
       id: 6,
-      titulo: 'Reconocimiento antes que Recordar',
+      titulo: 'Reconocimiento vs Recordar',
       icono: '💭',
-      descripcion: 'Evita que el usuario tenga que memorizar procesos u opciones.'
+      descripcion: 'Hacer visibles objetos y acciones en lugar de requerir memoria.',
+      ruta: '/heuristica/6'
     },
     {
       id: 7,
       titulo: 'Flexibilidad y Eficiencia',
       icono: '⚡',
-      descripcion: 'Permite atajos y configuraciones avanzadas sin afectar a los nuevos usuarios.'
+      descripcion: 'Acelerar la interacción para usuarios expertos sin afectar novatos.',
+      ruta: '/heuristica/7'
     },
     {
       id: 8,
       titulo: 'Diseño Estético y Minimalista',
       icono: '🎨',
-      descripcion: 'Menos es más: solo se muestra lo necesario.'
+      descripcion: 'No incluir información irrelevante que compita con contenido importante.',
+      ruta: '/heuristica/8'
     },
     {
       id: 9,
-      titulo: 'Ayuda ante Errores',
+      titulo: 'Reconocer y Recuperarse de Errores',
       icono: '🆘',
-      descripcion: 'Los errores deben explicarse en lenguaje claro e indicar cómo solucionarlos.'
+      descripcion: 'Mensajes de error en lenguaje sencillo con soluciones constructivas.',
+      ruta: '/heuristica/9'
     },
     {
       id: 10,
       titulo: 'Ayuda y Documentación',
       icono: '📚',
-      descripcion: 'Debe existir documentación accesible, clara y orientada a tareas.'
+      descripcion: 'Proporcionar ayuda fácil de buscar, enfocada en tareas del usuario.',
+      ruta: '/heuristica/10'
     }
   ]);
-
 }

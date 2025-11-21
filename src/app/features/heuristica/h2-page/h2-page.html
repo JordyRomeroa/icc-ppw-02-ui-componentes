@@ -1,72 +1,38 @@
-<div class="p-6 max-w-lg mx-auto bg-white rounded-xl shadow-lg border">
-      <div class="flex items-center mb-6">
-        <span class="text-2xl mr-3">🗂️</span>
-        <h2 class="text-xl font-semibold">Mi Escritorio</h2>
-      </div>
+<app-header-heuristica
+    numeroHeuristica="2"
+    titulo="Correspondencia entre el Mundo Real y el Sistema"
+    concepto="El sistema debe hablar el idioma de los usuarios, con palabras, frases y conceptos familiares para el usuario, en lugar de términos orientados al sistema. Seguir las convenciones del mundo real, haciendo que la información aparezca en un orden natural y lógico."
+>
+</app-header-heuristica>
 
-      <!-- Acciones familiares con iconos del mundo real -->
-      <div class="space-y-3">
-        <button
-          class="flex items-center w-full p-4 bg-blue-50 hover:bg-blue-100 text-left rounded-lg border border-blue-200 transition-colors"
-          (click)="executeOperation('Abrir mi escritorio')">
-          <span class="text-2xl mr-4">🖥️</span>
-          <div>
-            <div class="font-medium">Abrir Escritorio</div>
-            <div class="text-sm text-gray-600">Ver todos mis archivos y carpetas</div>
-          </div>
-        </button>
+<!-- Contenedor responsive para las dos secciones -->
+<div class="container mx-auto px-4 py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
 
-        <button
-          class="flex items-center w-full p-4 bg-green-50 hover:bg-green-100 text-left rounded-lg border border-green-200 transition-colors"
-          (click)="executeOperation('Crear nueva carpeta')">
-          <span class="text-2xl mr-4">📁</span>
-          <div>
-            <div class="font-medium">Nueva Carpeta</div>
-            <div class="text-sm text-gray-600">Organizar archivos en una carpeta</div>
-          </div>
-        </button>
-
-        <button
-          class="flex items-center w-full p-4 bg-yellow-50 hover:bg-yellow-100 text-left rounded-lg border border-yellow-200 transition-colors"
-          (click)="executeOperation('Copiar archivos al portapapeles')">
-          <span class="text-2xl mr-4">📋</span>
-          <div>
-            <div class="font-medium">Copiar</div>
-            <div class="text-sm text-gray-600">Copiar archivos al portapapeles</div>
-          </div>
-        </button>
-
-        <button
-          class="flex items-center w-full p-4 bg-purple-50 hover:bg-purple-100 text-left rounded-lg border border-purple-200 transition-colors"
-          (click)="executeOperation('Guardar documento')">
-          <span class="text-2xl mr-4">💾</span>
-          <div>
-            <div class="font-medium">Guardar</div>
-            <div class="text-sm text-gray-600">Guardar cambios en el documento</div>
-          </div>
-        </button>
-
-        <button
-          class="flex items-center w-full p-4 bg-red-50 hover:bg-red-100 text-left rounded-lg border border-red-200 transition-colors"
-          (click)="executeOperation('Mover a la papelera')">
-          <span class="text-2xl mr-4">🗑️</span>
-          <div>
-            <div class="font-medium">Eliminar</div>
-            <div class="text-sm text-gray-600">Mover archivos a la papelera</div>
-          </div>
-        </button>
-      </div>
-
-      <!-- Feedback en lenguaje natural -->
-      @if (lastOperation()) {
-        <div class="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
-          <div class="flex items-center">
-            <span class="text-xl mr-3">✅</span>
-            <div>
-              <div class="font-medium text-blue-900">¡Listo!</div>
-              <div class="text-sm text-blue-700">{{ lastOperation() }}</div>
+        <!-- Sección: Ejemplo Malo -->
+        <section class="w-full">
+            <div class="mb-4">
+                <h2 class="text-2xl font-bold text-red-600 mb-2 text-center">❌ Ejemplo Malo</h2>
+                <p class="text-gray-600 text-center text-sm">Terminología técnica que confunde al usuario</p>
             </div>
-          </div>
-        </div>
-      }
+
+            <app-heuristica-malo></app-heuristica-malo>
+        </section>
+
+        <!-- Sección: Ejemplo Bueno -->
+        <section class="w-full">
+            <div class="mb-4">
+                <h2 class="text-2xl font-bold text-green-600 mb-2 text-center">✅ Heurística Aplicada</h2>
+                <p class="text-gray-600 text-center text-sm">Lenguaje familiar y natural para el usuario</p>
+            </div>
+
+            <div class="p-6 bg-white rounded-xl shadow-lg border border-green-200">
+
+
+                <app-heuristica-bueno></app-heuristica-bueno>
+            </div>
+
+        </section>
+
     </div>
+</div>

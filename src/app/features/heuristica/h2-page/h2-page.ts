@@ -1,17 +1,16 @@
-// mundo-real-bueno.component.ts
 import { Component, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { HeaderHeuristicaComponent } from "../components/header-heuristica/header-heuristica";
+import { HeuristicaBueno } from "./componentes/heuristica-bueno/heuristica-bueno";
+import { HeuristicaMalo } from "./componentes/heuristica-malo/heuristica-malo";
 
 @Component({
-  selector: 'h2-page',
-  standalone: true,
-  imports: [CommonModule],
-  template: ``
+  selector: 'app-h2page',
+  imports: [HeaderHeuristicaComponent, HeuristicaBueno, HeuristicaMalo],
+  templateUrl: './h2-page.html',
+  styleUrl: './h2-page.css',
 })
-export class H2Page {
-  lastOperation = signal('');
+export class H2page {
 
-  executeOperation(action: string) {
-    this.lastOperation.set(action);
-  }
+
+
 }
